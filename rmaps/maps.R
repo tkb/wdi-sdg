@@ -26,7 +26,7 @@ forestdata.o <- forestdata[match(wrld_simpl$ISO2,forestdata$iso2c),]
 #feb24c <- medium orange
 #f03b20 <- dark orange
 
-findColor3 <- function(x) {
+findColors3 <- function(x) {
  if (!is.na(x)){
      if (x < 5) {
       col <- "#ffeda0"
@@ -43,9 +43,9 @@ findColor3 <- function(x) {
   return(col)
 }
 
-ternaryColors <- sapply(forestdata.o$ER.LND.PTLD.ZS, findColor3)
+ternaryColors <- sapply(forestdata.o$ER.LND.PTLD.ZS, findColors3)
 
-svg(filename="output.svg", 
+svg(filename="ER.LND.PTLD.ZS.svg", 
     width=25, 
     height=20, 
     pointsize=12)
